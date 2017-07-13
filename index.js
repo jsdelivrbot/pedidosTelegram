@@ -3,8 +3,12 @@ var http = require('http');
 console.log("INDEX.JS...");
 
 http.createServer(function (request, response) {
-  console.log("CRIANDO SERVIDOR");
-  fazTudo();
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  response.write('iniciado...!');
+  if (response.statusCode == "200" && request.url == "/"){
+    console.log("CRIANDO SERVIDOR");
+    fazTudo();
+  }
   response.end();
  }).listen(process.env.PORT || 5000);
 
