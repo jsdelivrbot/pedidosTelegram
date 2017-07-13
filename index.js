@@ -1,9 +1,13 @@
 var http = require('http');
 
-console.log("TO NO SCRIPS");
+console.log("INDEX.JS...");
 
 http.createServer(function (request, response) {
   console.log("CRIANDO SERVIDOR");
+  fazTudo();
+ }).listen(process.env.PORT || 5000);
+
+ function fazTudo(){
   const TelegramBot = require('node-telegram-bot-api');
 
   // replace the value below with the Telegram token you receive from @BotFather
@@ -32,5 +36,5 @@ http.createServer(function (request, response) {
     // send a message to the chat acknowledging receipt of their message
     bot.sendMessage(chatId, 'Opa... chegou uma mensagem...');
   });
-
- }).listen(process.env.PORT || 5000);
+   
+ }
