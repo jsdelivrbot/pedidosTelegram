@@ -5,9 +5,11 @@ console.log("INDEX.JS...");
 http.createServer(function (request, response) {
   console.log("CRIANDO SERVIDOR");
   fazTudo();
+  response.end();
  }).listen(process.env.PORT || 5000);
 
  function fazTudo(){
+  console.log("### CRIANDO BOT ###");
   const TelegramBot = require('node-telegram-bot-api');
 
   // replace the value below with the Telegram token you receive from @BotFather
